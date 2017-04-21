@@ -16,7 +16,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 let bot = new Bot({
     username: 'add2list',
     apiKey: '6412641e-f6e6-4da1-a34b-19ae18a2b929',
-    baseUrl: 'http://8144b8cb.ngrok.io'
+    baseUrl: 'https://cryptic-spire-14213.herokuapp.com/'
 });
 
 let goodreads = new Goodreads.client({

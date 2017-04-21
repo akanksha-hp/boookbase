@@ -1,8 +1,17 @@
 {
-    "name": "add2list",
-    "version": "1.0.0",
-    "keywords": ["util", "functional", "server", "client", "browser"],
-    "author": "Akanksha",
-    "contributors": [],
-    "dependencies": {}
+  "name": "add2list",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Akanksha",
+  "contributors": [],
+  "dependencies": {
+    "pg": "6.1.5"
+  }
 }

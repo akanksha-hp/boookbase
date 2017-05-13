@@ -267,7 +267,7 @@ bot.onTextMessage((message, next) => {
                 try {
                     ISBN = xmlDoc.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;
 
-                    var query = "UPDATE Books SET Mentioned = REPLACE(Mentioned, '," + uname + "', '') WHERE ISBN = '" + ISBN + "'";
+                    var query = "UPDATE books SET Mentioned = REPLACE(Mentioned, '," + uname + "', '') WHERE ISBN = '" + ISBN + "'";
                     //  console.log(query);
                     con.query(query, function (err, rows) {
 
@@ -277,7 +277,7 @@ bot.onTextMessage((message, next) => {
                         if (rows.changedRows) {
                             message.reply('Book deleted!');
                         } else {
-                            var query1 = "UPDATE Books SET Mentioned = REPLACE(Mentioned, '" + uname + "', '') WHERE ISBN = '" + ISBN + "'";
+                            var query1 = "UPDATE books SET Mentioned = REPLACE(Mentioned, '" + uname + "', '') WHERE ISBN = '" + ISBN + "'";
                             //    console.log(query1);
                             con.query(query1, function (err, rows) {
 

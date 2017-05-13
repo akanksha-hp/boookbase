@@ -409,7 +409,7 @@ bot.onTextMessage((message, next) => {
 
 
 bot.onTextMessage((message, next) => {
-	if (message.body.toLowerCase().match('hey'||'hi'||'hello'||'How'||'work'||'why')) {
+	if (message.body.toLowerCase().match('hey')||message.body.toLowerCase().match('hi')||message.body.toLowerCase().match('hello')||message.body.toLowerCase().match('how')) {
     bot.getUserProfile(message.from)
         .then((user) => {
             message.reply(`Hey ${user.firstName}!`);

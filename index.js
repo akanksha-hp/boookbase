@@ -44,7 +44,7 @@ bot.onStartChattingMessage((message) => {
     bot.getUserProfile(message.from)
         .then((user) => {
             message.reply(`Hey ${user.firstName}!`);
-			message.reply(`To get a list of all fucntions type @add2list help`);
+			message.reply(`To get a list of all functions type @add2list help`);
         });
 });
 
@@ -53,7 +53,7 @@ bot.onLinkMessage((message) => {
     bot.getUserProfile(message.from)
         .then((user) => {
             message.reply(`Hey ${user.firstName}!`);
-			message.reply(`To get a list of all fucntions type @add2list help`);
+			message.reply(`To get a list of all functions type @add2list help`);
         });
 });
 
@@ -62,7 +62,7 @@ bot.onPictureMessage((message) => {
     bot.getUserProfile(message.from)
         .then((user) => {
             message.reply(`Hey ${user.firstName}!`);
-			message.reply(`To get a list of all fucntions type @add2list help`);
+			message.reply(`To get a list of all functions type @add2list help`);
         });
 });
 
@@ -71,7 +71,7 @@ bot.onVideoMessage((message) => {
     bot.getUserProfile(message.from)
         .then((user) => {
             message.reply(`Hey ${user.firstName}!`);
-			message.reply(`To get a list of all fucntions type @add2list help`);
+			message.reply(`To get a list of all functions type @add2list help`);
         });
 });
 
@@ -80,7 +80,7 @@ bot.onScanDataMessage((message) => {
     bot.getUserProfile(message.from)
         .then((user) => {
             message.reply(`Hey ${user.firstName}!`);
-			message.reply(`To get a list of all fucntions type @add2list help`);
+			message.reply(`To get a list of all functions type @add2list help`);
         });
 });
 
@@ -89,7 +89,7 @@ bot.onStartChattingMessage((message) => {
     bot.getUserProfile(message.from)
         .then((user) => {
             message.reply(`Hey ${user.firstName}!`);
-			message.reply(`To get a list of all fucntions type @add2list help`);
+			message.reply(`To get a list of all functions type @add2list help`);
         });
 });
 
@@ -248,7 +248,7 @@ if(rows.length>0){
             message.reply(List1);
 }
 else{
-	message.reply('No list forund for this user');
+	message.reply('No list found for this user');
 }		
 	
         });
@@ -420,6 +420,15 @@ bot.onTextMessage((message) => {
 
 
     }
+});
+
+bot.onTextMessage((message) => {
+    bot.getUserProfile(message.from)
+        .then((user) => {
+            message.reply(`Hey ${user.firstName}!`);
+			message.reply(`To get a list of all functions type @add2list help`);
+        });
+
 });
 
 // Set up your server and start listening

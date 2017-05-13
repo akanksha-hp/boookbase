@@ -353,4 +353,4 @@ bot.onTextMessage((message) => {
 // Set up your server and start listening
 let server = http
         .createServer(bot.incoming())
-        .listen(process.env.PORT || 8080);
+        .listen(process.env.PORT || 3000);

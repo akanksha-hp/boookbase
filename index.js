@@ -39,6 +39,14 @@ con.connect(function (err) {
     console.log('Connection established');
 });
 
+bot.onStartChattingMessage((message) => {
+    bot.getUserProfile(message.from)
+        .then((user) => {
+            message.reply(`Hey ${user.firstName}!`);
+			message.reply(`To get a list of all fucntions type @add2list help`);
+        });
+});
+
 
 bot.onTextMessage((message, next) => {
     if (message.body == 'list' || message.body == 'List')

@@ -218,7 +218,7 @@ message.reply('An error occurred. Try again. Or get in touch at thecoolestbiblio
 });
 
 
-bot.onTextMessage((message, next) => {
+bot.onTextMessage((message) => {
     if (message.body.toLowerCase().match('getmylist') || message.body.toLowerCase().match('getlist')) {
         var uname;
         if (message.body.toLowerCase().match('getmylist')) {
@@ -254,7 +254,6 @@ else{
         });
 
     }
-    next();
 });
 
 

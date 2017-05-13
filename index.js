@@ -64,6 +64,8 @@ bot.onPictureMessage((message) => {
             message.reply(`Hey ${user.firstName}!`);
 			message.reply(`To get a list of all fucntions type @add2list help`);
         });
+	var uname = message.from;
+	message.addResponseKeyboard(suggestions, false, uname);
 });
 
 

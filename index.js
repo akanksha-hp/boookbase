@@ -407,6 +407,14 @@ bot.onTextMessage((message, next) => {
 });
 
 
+bot.onTextMessage((message, next) => {
+    bot.getUserProfile(message.from)
+        .then((user) => {
+            message.reply(`Hey ${user.firstName}!`);
+			message.reply(`To get a list of all functions type @add2list help`);
+        });
+next();
+});
 
 
 bot.onTextMessage((message) => {
@@ -422,14 +430,6 @@ bot.onTextMessage((message) => {
     }
 });
 
-bot.onTextMessage((message) => {
-    bot.getUserProfile(message.from)
-        .then((user) => {
-            message.reply(`Hey ${user.firstName}!`);
-			message.reply(`To get a list of all functions type @add2list help`);
-        });
-
-});
 
 // Set up your server and start listening
 let server = http

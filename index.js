@@ -9,7 +9,6 @@
 let util = require('util');
 let http = require('http');
 let Bot = require('@kikinteractive/kik');
-let Goodreads = require('goodreads');
 var DOMParser = require('xmldom').DOMParser;
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 // Configure the bot API endpoint, details for your bot
@@ -17,11 +16,6 @@ let bot = new Bot({
     username: 'add2list',
     apiKey: '6412641e-f6e6-4da1-a34b-19ae18a2b929',
     baseUrl: 'https://cryptic-spire-14213.herokuapp.com/'
-});
-
-let goodreads = new Goodreads.client({
-    'key': '48bnEKgbFotjftWpTKmlA',
-    'secret': 'jtzaJi5jiYZ7yCd16LbhwOgtWABPnRSoLyb96DSl5c'
 });
 
 bot.updateBotConfiguration();

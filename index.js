@@ -106,9 +106,10 @@ bot.onTextMessage((message, next) => {
             var List = [];
             con.query(query, function (err, rows) {
 
-                if (err)
-                    throw err;
-
+                if (err){
+                    message.reply('An error occurred. Try again. Or get in touch at thecoolestbibliophile@gmail.com');
+					throw err;
+				}
                 for (var i = 0; i < rows.length; i++) {
                     var TitleB = rows[i].Title;
                     var uname = rows[i].Mentioned;
@@ -167,9 +168,10 @@ bot.onTextMessage((message, next) => {
 
                     con.query('SELECT Mentioned FROM books WHERE ISBN = ?', ISBN, function (err, rows) {
 
-                        if (err)
-                            throw err;
-
+                        if (err){
+message.reply('An error occurred. Try again. Or get in touch at thecoolestbibliophile@gmail.com'); 
+ throw err;
+						}
                         if (rows.length > 0) {
                             var unameAdded = rows[0].Mentioned;
                             // var unameAdded = unameAdded.toString();
@@ -179,9 +181,10 @@ bot.onTextMessage((message, next) => {
                             con.query(query,
                                     function (err, res) {
 
-                                        if (err)
+                                        if (err){
+											message.reply('An error occurred. Try again. Or get in touch at thecoolestbibliophile@gmail.com');
                                             throw err;
-
+										}
                                         console.log('Last insert ID:', res.insertId);
                                     });
                             var reply = 'This book has already been added by ' + unameAdded + ' Your name has been added to the list.';
@@ -191,8 +194,10 @@ bot.onTextMessage((message, next) => {
                             con.query('INSERT INTO books SET ?', {Title: TitleN, Mentioned: uname, Author: AuthorN, ISBN: ISBN},
                                     function (err, res) {
 
-                                        if (err)
-                                            throw err;
+                                         if (err){
+                    message.reply('An error occurred. Try again. Or get in touch at thecoolestbibliophile@gmail.com');
+					throw err;
+				}
 
                                         console.log('Last insert ID:', res.insertId);
                                     });
@@ -226,9 +231,11 @@ bot.onTextMessage((message, next) => {
         var query = "SELECT Title, Author FROM books WHERE Mentioned LIKE '%" + uname + "%'";
         con.query(query, function (err, rows) {
 
-            if (err)
+            if (err){
+				message.reply('An error occurred. Try again. Or get in touch at thecoolestbibliophile@gmail.com');
                 throw err;
-
+			}
+if(rows.length>0){
             for (var i = 0; i < rows.length; i++) {
                 var TitleB = rows[i].Title;
                 var Author = rows[i].Author;
@@ -239,6 +246,11 @@ bot.onTextMessage((message, next) => {
 
             var List1 = List.join('\n');
             message.reply(List1);
+}
+else{
+	message.reply('No list forund for this user');
+}		
+	
         });
 
     }
@@ -325,8 +337,10 @@ bot.onTextMessage((message, next) => {
                     //  console.log(query);
                     con.query(query, function (err, rows) {
 
-                        if (err)
-                            throw err;
+                          if (err){
+                    message.reply('An error occurred. Try again. Or get in touch at thecoolestbibliophile@gmail.com');
+					throw err;
+				}
 
                         if (rows.changedRows) {
                             message.reply('Book deleted!');
@@ -335,8 +349,10 @@ bot.onTextMessage((message, next) => {
                             //    console.log(query1);
                             con.query(query1, function (err, rows) {
 
-                                if (err)
-                                    throw err;
+                                  if (err){
+                    message.reply('An error occurred. Try again. Or get in touch at thecoolestbibliophile@gmail.com');
+					throw err;
+				}
 
                                 if (rows.changedRows) {
                                     message.reply('Book deleted!');
@@ -368,8 +384,10 @@ bot.onTextMessage((message, next) => {
         if(message.from === 'queenofwords1' || message.from === 'blonde_angel_reading'|| message.from === 'magadin' ){
         var query1 = 'DELETE FROM books WHERE (Mentioned = "" OR Mentioned = " ,")';
         con.query(query1, function (err, rows) {
-            if (err)
-                throw err;
+              if (err){
+                    message.reply('An error occurred. Try again. Or get in touch at thecoolestbibliophile@gmail.com');
+					throw err;
+				}
 
             if (rows.affectedRows>0) {
                 message.reply('Book deleted!');

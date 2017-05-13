@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "This is the kik bot for Good Reads API",
   "main": "index.js",
-  "start": "node index.js",
   "dependencies": {
     "@kikinteractive/kik": "^2.2.0",
     "dotenv": "^4.0.0",
@@ -19,6 +18,9 @@
   "engines": {
     "node": "6.10.2"
   },
+  "scripts": {
+    "start": "node index.js"
+},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

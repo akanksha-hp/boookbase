@@ -218,7 +218,7 @@ message.reply('An error occurred. Try again. Or get in touch at thecoolestbiblio
 });
 
 
-bot.onTextMessage((message) => {
+bot.onTextMessage((message, next) => {
     if (message.body.toLowerCase().match('getmylist') || message.body.toLowerCase().match('getlist')) {
         var uname;
         if (message.body.toLowerCase().match('getmylist')) {
@@ -254,6 +254,8 @@ else{
         });
 
     }
+	
+    next();
 });
 
 
@@ -407,11 +409,13 @@ bot.onTextMessage((message, next) => {
 
 
 bot.onTextMessage((message, next) => {
+	if (message.body.toLowerCase().match('hey'||'hi'||'hello'||'How'||'work'||'why')) {
     bot.getUserProfile(message.from)
         .then((user) => {
             message.reply(`Hey ${user.firstName}!`);
 			message.reply(`To get a list of all functions type @add2list help`);
         });
+	}
 next();
 });
 

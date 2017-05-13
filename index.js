@@ -48,6 +48,51 @@ bot.onStartChattingMessage((message) => {
 });
 
 
+bot.onLinkMessage((message) => {
+    bot.getUserProfile(message.from)
+        .then((user) => {
+            message.reply(`Hey ${user.firstName}!`);
+			message.reply(`To get a list of all fucntions type @add2list help`);
+        });
+});
+
+
+bot.onPictureMessage((message) => {
+    bot.getUserProfile(message.from)
+        .then((user) => {
+            message.reply(`Hey ${user.firstName}!`);
+			message.reply(`To get a list of all fucntions type @add2list help`);
+        });
+});
+
+
+bot.onVideoMessage((message) => {
+    bot.getUserProfile(message.from)
+        .then((user) => {
+            message.reply(`Hey ${user.firstName}!`);
+			message.reply(`To get a list of all fucntions type @add2list help`);
+        });
+});
+
+
+bot.onScanDataMessage((message) => {
+    bot.getUserProfile(message.from)
+        .then((user) => {
+            message.reply(`Hey ${user.firstName}!`);
+			message.reply(`To get a list of all fucntions type @add2list help`);
+        });
+});
+
+
+bot.onStartChattingMessage((message) => {
+    bot.getUserProfile(message.from)
+        .then((user) => {
+            message.reply(`Hey ${user.firstName}!`);
+			message.reply(`To get a list of all fucntions type @add2list help`);
+        });
+});
+
+
 bot.onTextMessage((message, next) => {
     if (message.body == 'list' || message.body == 'List')
     {

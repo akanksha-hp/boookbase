@@ -1,17 +1,31 @@
 {
-  "name": "add2list",
+  "name": "boookbase",
   "version": "1.0.0",
+  "description": "This is the kik bot for Good Reads API",
   "main": "index.js",
-  "keywords": [
-    "util",
-    "functional",
-    "server",
-    "client",
-    "browser"
-  ],
-  "author": "Akanksha",
-  "contributors": [],
   "dependencies": {
-    "pg": "6.1.5"
-  }
+    "dotenv": "^4.0.0",
+    "pg": "^6.1.5",
+    "request": "^2.81.0",
+    "simple-goodreads": "^1.0.1",
+    "x2js": "^3.1.0",
+    "xml2js": "^0.4.17",
+    "xmltojson": "^1.1.0",
+    "xmldom": "^0.1.27",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akanksha-hp/boookbase.git"
+  },
+  "author": "Akanksha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akanksha-hp/boookbase/issues"
+  },
+  "homepage": "https://github.com/akanksha-hp/boookbase#readme"
 }

@@ -16,7 +16,7 @@ let bot = new Bot({
     username: 'add2list',
     apiKey: '6412641e-f6e6-4da1-a34b-19ae18a2b929',
     baseUrl: 'https://cryptic-spire-14213.herokuapp.com/',
-	staticKeyboard: new Bot.ResponseKeyboard(['Help'])
+	staticKeyboard: new Bot.ResponseKeyboard(['List', 'Getmylist', 'Help' ])
 });
 
 bot.updateBotConfiguration();

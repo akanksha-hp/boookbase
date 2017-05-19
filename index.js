@@ -110,7 +110,7 @@ bot.onTextMessage((message, next) => {
                     message.reply('An error occurred. Try again. Or get in touch at thecoolestbibliophile@gmail.com');
 					throw err;
 				}
-                for (var i = 0; i < rows.length; i++) {
+                for (var i = 0; i < 15; i++) {
                     var TitleB = rows[i].Title;
                     var uname = rows[i].Mentioned;
                     var Name = (i + 1) + '.' + TitleB + ' Member: ' + uname;
@@ -143,9 +143,9 @@ bot.onTextMessage((message, next) => {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
         xhr.send();
- 
+ 
         xhr.onreadystatechange = processRequest;
- 
+ 
         function processRequest(e) {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 var respon = xhr.responseText;
@@ -271,9 +271,9 @@ bot.onTextMessage((message, next) => {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
         xhr.send();
- 
+ 
         xhr.onreadystatechange = processRequest;
- 
+ 
         function processRequest(e) {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 var respon = xhr.responseText;
@@ -321,9 +321,9 @@ bot.onTextMessage((message, next) => {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
         xhr.send();
- 
+ 
         xhr.onreadystatechange = processRequest;
- 
+ 
         function processRequest(e) {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 var respon = xhr.responseText;
@@ -419,13 +419,13 @@ bot.onTextMessage((message, next) => {
 next();
 });
 
-bot.onTextMessage((message, next) => {
+/* bot.onTextMessage((message, next) => {
 	message.reply(message.addResponseKeyboard(['Help']));
     next();
-});
+}); */
 
 
-bot.onTextMessage((message) => {
+bot.onTextMessage((message, next) => {
     if (message.body.toLowerCase() === 'help') {
         message.reply('You can use any of these funtions:\n 1. @add2list add <bookname> - To add a new book to the List \n 2. @add2list getdetails <bookname> - To get all the details about a book from Goodreads. \n 3. @add2list getmylist - To get a list of all the books you have added \n 4. @add2list getlist <uname> - To get a list of all the books added by a user.');
         //  message.reply('3. @add2list getmylist - To get a list of all the books you have added \n @add2list getlist <uname>');
@@ -436,6 +436,7 @@ bot.onTextMessage((message) => {
 
 
     }
+	 next();
 });
 
 
